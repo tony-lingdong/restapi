@@ -27,7 +27,7 @@ public class UserController {
         logger.info("-----------根据用户id返回用户信息-------------");
 
         User user = userService.getUserById(id);
-        logger.info("user对象：[{}]",user);
+        logger.info("user对象123：[{}]",user);
         return AjaxResponse.success(user);
     }
 
