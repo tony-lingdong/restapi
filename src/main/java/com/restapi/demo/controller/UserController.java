@@ -21,6 +21,10 @@ public class UserController {
     private final static  Logger logger = LoggerFactory.getLogger(UserController.class);
     @Autowired
     UserService userService;
+    @ApiOperation(value = "登录验证")
+    public boolean login(@RequestBody User user){
+        return false;
+    }
     @ApiOperation(value = "根据id获取用户信息")
     @GetMapping(value = "/get_user_by_id/{id}")
     public AjaxResponse getUserById(@PathVariable int id){

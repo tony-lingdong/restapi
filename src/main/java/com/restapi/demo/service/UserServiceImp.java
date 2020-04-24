@@ -11,8 +11,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImp implements UserService{
-    @Autowired
+    @Autowired(required = false)
     UserMapper userMapper;
+
     @Override
     public User getUserById(int id) {
         return userMapper.getUserById(id);
