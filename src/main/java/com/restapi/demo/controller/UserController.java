@@ -22,6 +22,7 @@ public class UserController {
     @Autowired
     UserService userService;
     @ApiOperation(value = "登录验证")
+    @GetMapping("/login")
     public boolean login(@RequestBody User user){
         return false;
     }
@@ -29,7 +30,6 @@ public class UserController {
     @GetMapping(value = "/get_user_by_id/{id}")
     public AjaxResponse getUserById(@PathVariable int id){
         logger.info("-----------根据用户id返回用户信息-------------");
-
         User user = userService.getUserById(id);
         logger.info("user对象123：[{}]",user);
         return AjaxResponse.success(user);

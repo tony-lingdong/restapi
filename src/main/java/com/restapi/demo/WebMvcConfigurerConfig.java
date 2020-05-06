@@ -28,15 +28,21 @@ public class WebMvcConfigurerConfig implements WebMvcConfigurer {
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new InterceptorConfig()).addPathPatterns("/**").excludePathPatterns("/login","/register");
+       /* registry.addInterceptor(new InterceptorConfig()).addPathPatterns("/**").excludePathPatterns("/login","/register")
+                .excludePathPatterns("/account/**")
+                // 静态资源
+                .excludePathPatterns("/js/**", "/css/**", "/images/**", "/lib/**",
+                        "/fonts/**")
+                // swagger-ui
+                .excludePathPatterns("/swagger-resources/**", "/webjars/**",
+                        "/v2/**", "/swagger-ui.html/**");*/
     }
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("swagger-ui.html")
                 .addResourceLocations("classpath:/META-INF/resources/");
         registry.addResourceHandler("/webjars/**")
                 .addResourceLocations("classpath:/META-INF/resources/webjars/");
-
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 }
