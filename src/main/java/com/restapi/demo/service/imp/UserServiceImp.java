@@ -16,6 +16,11 @@ public class UserServiceImp implements UserService {
     UserMapper userMapper;
 
     @Override
+    public User getUserByUserNameAndPwd(String username, String password) {
+        return userMapper.getUserByUserNameAndPwd(username,password);
+    }
+
+    @Override
     public User getUserById(int id) {
         return userMapper.getUserById(id);
     }

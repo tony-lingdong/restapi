@@ -21,6 +21,11 @@ spring:
       connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
       stat-view-servlet:
         allow: 127.0.0.1
+  session:
+    store-type: redis
+    redis:
+      namespace: evidence
+
   redis:
     host: 127.0.0.1
     port: 6379
@@ -32,3 +37,6 @@ spring:
         max-wait: -1
         max-idle: 8
         min-idle: 0
+server:
+  servlet:
+    context-path: /restapi
